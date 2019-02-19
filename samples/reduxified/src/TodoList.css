@@ -1,0 +1,12 @@
+fieldset {
+  display: inline-block;
+  text-align: left;
+}
+
+fieldset > div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.list-frame {
+  text-align: center;
+}
