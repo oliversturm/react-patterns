@@ -102,6 +102,45 @@ class: impact
 
 ---
 
+## Handling Side Effects
+
+- React _render functions_ are expected to be _functionally pure_
+- React has _built-in mechanisms_ to deal with _side effects_
+  - Class-based lifecycle methods (`componentDidMount` etc)
+  - Hooks ([useEffect](https://reactjs.org/docs/hooks-effect.html), `useLayoutEffect`)
+  - Logic of side-effects is bound to individual components
+- For application-wide logic, _I recommend Sagas!_
+
+---
+
+class: impact
+
+# DEMO
+
+---
+
+## Sagas Can Handle Any Complexity
+
+```js
+function* composeSendHandler() {
+  const jobId = makeJobId();
+  yield put(startJob(jobId, 'Sending email'));
+
+  const composeData = yield select(getComposeData);
+  const account = yield select(getAccount);
+
+  // ...
+
+  const sendStatus = yield call(sendMail, message);
+  if (sendStatus) {
+    yield put(sendError(sendStatus));
+  }
+  yield put(completeJob(jobId));
+}
+```
+
+---
+
 ## Sources
 
 - This presentation:
