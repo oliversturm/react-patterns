@@ -63,6 +63,19 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 
 ---
 
+## I Like Redux
+
+- The pattern has turned out to be _extremely powerful_
+- Promotes _good structure_
+  - ... which results in _maintainability_
+- People complain about boilerplate
+  - They're doing it wrong
+- People complain about the learning curve
+  - Oh well... it's really not that bad. Agreed: being a good programmer has a learning curve.
+- Ideas are being _adopted elsewhere_, e.g. React Hooks ([useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer)), [reactn](https://github.com/CharlesStover/reactn) (global state management)
+
+---
+
 class: impact
 
 # DEMO
@@ -70,6 +83,22 @@ class: impact
 ---
 
 ## Routing
+
+- You know - how to map URLs to parts of your app
+
+  - `/user/:id`
+
+- The Big Ugly: [React Router](https://reacttraining.com/react-router)
+  - Very powerful and flexible
+  - Component based
+- Alternative: _Routing as an aspect of State_
+  - My favorite: [Rudy](https://github.com/respond-framework/rudy), successor to [redux-first-router](https://github.com/faceyspacey/redux-first-router)
+
+---
+
+class: impact
+
+# DEMO
 
 ---
 
