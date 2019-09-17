@@ -21,9 +21,7 @@ class: impact
 Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 ]
 
-.title-logo[
-<img src="template/devexpress.png" id="devexpress" alt="DevExpress">
-]
+.title-logo[<img src="template/devexpress.png" id="devexpress" alt="DevExpress">]
 
 ---
 
@@ -57,9 +55,7 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 
 # Redux
 
-.svg[
-![Redux](redux.svg)
-]
+.svg-light-width[![Redux](redux.svg)]
 
 ---
 
