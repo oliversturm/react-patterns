@@ -1,0 +1,11 @@
+{
+  "eslint.packageManager": "yarn",
+  "eslint.workingDirectories": [
+    "./samples/SideEffects/react-load-data",
+    "./samples/SideEffects/sagas",
+    "./samples/SideEffects/sagas-starting-point",
+    "./samples/TodoDemo/reduxified",
+    "./samples/TodoDemo/routing",
+    "./samples/TodoDemo/starting-point"
+  ]
+}

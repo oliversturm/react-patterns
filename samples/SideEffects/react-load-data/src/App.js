@@ -1,31 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import axios from 'axios';
 
 const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://outlier.oliversturm.com:8080/countries')
-      .then(res => setData(res.data.data));
-  });
+    fetch('http://outlier.oliversturm.com:8080/countries')
+      .then(res => res.json())
+      .then(res => setData(res.data));
+  }, [setData]);
 
   return (
     <table>
-      <tr>
-        <th>Name</th>
-        <th>Area in KM^2</th>
-        <th>Population</th>
-      </tr>
-      {data &&
-        data.map(c => (
-          <tr>
-            <td>{c.name}</td>
-            <td>{c.areaKM2}</td>
-            <td>{c.population}</td>
-          </tr>
-        ))}
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Area in KM^2</th>
+          <th>Population</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data &&
+          data.map((c, i) => (
+            <tr key={i}>
+              <td>{c.name}</td>
+              <td>{c.areaKM2}</td>
+              <td>{c.population}</td>
+            </tr>
+          ))}
+      </tbody>
     </table>
   );
 };

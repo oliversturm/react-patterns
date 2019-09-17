@@ -5,18 +5,22 @@ import './List.css';
 const List = ({ loaded, loading, data }) => [
   loaded ? (
     <table>
-      <tr>
-        <th>Name</th>
-        <th>Area in KM^2</th>
-        <th>Population</th>
-      </tr>
-      {data.map(c => (
+      <thead>
         <tr>
-          <td>{c.name}</td>
-          <td>{c.areaKM2}</td>
-          <td>{c.population}</td>
+          <th>Name</th>
+          <th>Area in KM^2</th>
+          <th>Population</th>
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data.map((c, i) => (
+          <tr key={i}>
+            <td>{c.name}</td>
+            <td>{c.areaKM2}</td>
+            <td>{c.population}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   ) : loading ? (
     <div>LOADING IN PROGRESS</div>

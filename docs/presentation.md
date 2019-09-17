@@ -48,7 +48,7 @@ Oliver Sturm &bull; @olivers &bull; oliver@oliversturm.com
 - UI: [Material-UI](https://material-ui.com/), [reactstrap](https://reactstrap.github.io/) and many other free and commercial offerings
 - Dealing with styles: [styled-components](https://github.com/styled-components/styled-components) or [CSS Modules](https://github.com/css-modules/css-modules)
 - Framework: [Relay](https://github.com/facebook/relay), [Apollo Client](https://github.com/apollographql/apollo-client) for GraphQL, [Gatsby](https://www.gatsbyjs.org/) for complete apps
-- Utility: [Lodash](https://lodash.com/), [Ramda](http://ramdajs.com/), [axios](https://github.com/axios/axios)
+- Utility: [Lodash](https://lodash.com/), [Ramda](http://ramdajs.com/)
 - Outdated: [recompose](https://github.com/acdlite/recompose)
 
 ---
