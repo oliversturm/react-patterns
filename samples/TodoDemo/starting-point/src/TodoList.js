@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Immutable from 'seamless-immutable';
 import TodoItem from './TodoItem';
 import NewItemEntry from './NewItemEntry';
@@ -10,13 +10,18 @@ const TodoList = () => {
   const [items, setItems] = useState(
     Immutable([
       { done: true, text: 'Come to Basta' },
-      { done: false, text: 'Learn about React' }
+      { done: false, text: 'Learn about React' },
     ])
   );
 
-  const itemDoneChanged = (index, newDone) =>
-    setItems(items.setIn([index, 'done'], newDone));
-  const newItem = text => setItems(items.concat([{ done: false, text }]));
+  const itemDoneChanged = useCallback(
+    (index, newDone) => setItems(items.setIn([index, 'done'], newDone)),
+    [items, setItems]
+  );
+  const newItem = useCallback(
+    (text) => setItems(items.concat([{ done: false, text }])),
+    [items, setItems]
+  );
 
   return (
     <div className="list-frame">
@@ -28,7 +33,7 @@ const TodoList = () => {
               key={index}
               done={item.done}
               text={item.text}
-              doneChanged={d => itemDoneChanged(index, d)}
+              doneChanged={(d) => itemDoneChanged(index, d)}
             />
           ))}
         </div>
